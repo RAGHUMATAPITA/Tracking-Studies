@@ -1,0 +1,78 @@
+DEBUG 2023-09-24 05:47:37.330 UTC: 	 CRAB Client version: v3.230612
+DEBUG 2023-09-24 05:47:37.330 UTC: 	 Running on: Linux lxplus806.cern.ch 4.18.0-477.21.1.el8_8.x86_64 #1 SMP Thu Jul 20 08:38:27 EDT 2023 x86_64 x86_64 x86_64 GNU/Linux - Red Hat Enterprise Linux 8.8 (Ootpa)
+DEBUG 2023-09-24 05:47:37.330 UTC: 	 Executing command: 'submit'
+DEBUG 2023-09-24 05:47:37.331 UTC: 	 Found CRAB cache file /afs/cern.ch/user/r/rpradhan/.crab3
+INFO 2023-09-24 05:47:37.350 UTC: 	 Will use CRAB configuration file Submit_CrabJob.py
+DEBUG 2023-09-24 05:47:37.350 UTC: 	 Loading CRAB configuration file.
+ERROR 2023-09-24 05:47:37.352 UTC: 	 Error while loading CRAB configuration:
+invalid syntax (Submit_CrabJob.py, line 34)
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2023-09-24 05:47:37.352 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230612.00/lib/WMCore/Configuration.py", line 326, in loadConfigurationFile
+    modRef = imp.load_module(cfgBaseName, modPath[0],
+  File "/cvmfs/cms.cern.ch/el8_amd64_gcc11/external/python3/3.9.14-f1bd82445f2982609f838e795adb062f/lib/python3.9/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/cvmfs/cms.cern.ch/el8_amd64_gcc11/external/python3/3.9.14-f1bd82445f2982609f838e795adb062f/lib/python3.9/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 711, in _load
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/afs/cern.ch/work/r/rpradhan/Tracking_Studies/BeforeRun2023/CMSSW_13_2_4/src/HITrackingStudies/HITrackingStudies/test/Submit_CrabJob.py", line 34
+    print "Failed submitting task: %s" % (hte.headers)
+          ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230612.00/lib/CRABClient/Commands/SubCommand.py", line 55, in loadConfig
+    self.configuration = loadConfigurationFile(os.path.abspath(configname))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230612.00/lib/WMCore/Configuration.py", line 334, in loadConfigurationFile
+    raise RuntimeError(msg)
+RuntimeError: Unable to load Configuration File:
+/afs/cern.ch/work/r/rpradhan/Tracking_Studies/BeforeRun2023/CMSSW_13_2_4/src/HITrackingStudies/HITrackingStudies/test/Submit_CrabJob.py
+Due to error:
+invalid syntax (Submit_CrabJob.py, line 34)Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230612.00/lib/WMCore/Configuration.py", line 326, in loadConfigurationFile
+    modRef = imp.load_module(cfgBaseName, modPath[0],
+  File "/cvmfs/cms.cern.ch/el8_amd64_gcc11/external/python3/3.9.14-f1bd82445f2982609f838e795adb062f/lib/python3.9/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/cvmfs/cms.cern.ch/el8_amd64_gcc11/external/python3/3.9.14-f1bd82445f2982609f838e795adb062f/lib/python3.9/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 711, in _load
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/afs/cern.ch/work/r/rpradhan/Tracking_Studies/BeforeRun2023/CMSSW_13_2_4/src/HITrackingStudies/HITrackingStudies/test/Submit_CrabJob.py", line 34
+    print "Failed submitting task: %s" % (hte.headers)
+          ^
+SyntaxError: invalid syntax
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230612.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230612.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230612.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230612.00/lib/CRABClient/Commands/SubCommand.py", line 316, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230612.00/lib/CRABClient/Commands/SubCommand.py", line 89, in loadConfig
+    raise ConfigurationException(configmsg)
+CRABClient.ClientExceptions.ConfigurationException: Error while loading CRAB configuration:
+invalid syntax (Submit_CrabJob.py, line 34)
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2023-09-24 05:47:37.355 UTC: 	 Log file is /afs/cern.ch/work/r/rpradhan/Tracking_Studies/BeforeRun2023/CMSSW_13_2_4/src/HITrackingStudies/HITrackingStudies/test/crab.log
